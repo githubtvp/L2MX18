@@ -1,0 +1,26 @@
+td{
+        text-align: right;
+		color : yellow;
+      }
+.leftalign
+{
+	text-align: left;	
+}
+	
+table {
+	
+}
+
+tr{
+	background-color : #000000;
+}
+	
+.green
+{
+	background-color : green;	
+}
+
+.brown
+{
+	background-color : brown;	
+}

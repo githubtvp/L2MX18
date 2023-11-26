@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms : Qsn 2</title>
+	<link rel="stylesheet" type="text/css" href="FormsEx1Qsn2CSS.css"/>
+</head>
+<body>
+    <table>
+        <form method="post"> 
+    <tr>
+        <td class = "leftalign" colspan="2" bgcolor = "red" ><label>Sign up</label></td>
+    </tr>
+    <tr >
+        <td><label>First Name</label></td>
+        <td><input type="text" placeholder="Enter First Name"></td>
+    </tr>
+    <tr>
+        <td><label>Enter Last Name</label></td>
+        <td><input type="text" placeholder="Enter Last Name"></td>
+    </tr>
+    <tr>
+        <td><label>Date of Birth</label></td>
+        <td>
+            <select name="Date" id="date"> <option value="date">Date</option>          
+            </select>
+            <select name="Month" id="month"> <option value="month">Month</option>          
+            </select>        
+            <select name="Year" id="year"> <option value="year">Year</option>          
+            </select>
+        </td>
+    </tr>   
+    <tr>
+        <td>Gender</td>
+        <td class = "leftalign">
+		<input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label></td>
+    </tr>
+    <tr>
+        <td><label for="age"></label>Country</label></td>
+        <td class="leftalign">  
+            <select name="country" id="country">
+            <option value="country">Country</option>           
+            </select>
+        </td>   
+    </tr>
+    <tr>
+        <td><label>E-mail</label></td>
+        <td><input type="text" placeholder="Enter E-mail"></td>
+    </tr>
+    <tr>
+        <td><label>Phone</label></td>
+        <td><input type="text" placeholder="Phone"></td>
+    </tr>
+
+    <tr>
+        <td><label>Password</label></td>
+        <td><input type="password" id="pwd"></td>
+    </tr>
+    <tr>
+        <td><label>Confirm Password</label></td>
+        <td><input type="password" id=""cpwd"></td>
+    </tr>
+
+    <tr>
+        <td colspan="2"  >
+            <input type="checkbox" id="agreeTerms" name="agree" value="yes">
+                <label for="agreeTerms">I agree to the Terms of use</label></td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor = "red">
+		<input class = "green" type = "button" value="Submit" onclick="msg()">
+        <input class = "brown" type = "button" value="Cancel" onclick="msg()">
+		</td>        
+    </tr> 
+    </form>
+    </table>
+</body>
+</html>

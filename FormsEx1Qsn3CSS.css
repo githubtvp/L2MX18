@@ -1,0 +1,21 @@
+form {
+	font-size : 16px;	
+}
+
+#formcontainer
+{
+	/*width : 80%;*/
+	/*height : 80%;*/
+	/*float : right;*/
+}
+
+td.img{
+	padding-top: 80%;
+	text-align: center;	
+ }
+
+select 
+{
+    width: 100px;
+}
+

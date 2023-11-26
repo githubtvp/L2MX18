@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <form method="post"> 
+    <tr>
+        <td colspan="2" bgcolor = "yellow">  User form </td>
+    </tr>
+    <tr>
+        <td bgcolor = "skyblue" ><label>Enter Name</label></td>
+        <td bgcolor = "skyblue"><input type="text"></td>
+    </tr>
+    <tr>
+        <td bgcolor = "skyblue"><label>Enter Password</label></td>
+        <td bgcolor = "skyblue"><input type="password"></td>
+    </tr>
+    <tr>
+        <td bgcolor = "skyblue"><label>Enter Addresse</label></td>
+        <td bgcolor = "skyblue"><textarea rows="4" cols="15"></textarea></td>
+    </tr>
+    <tr>
+        <td bgcolor = "skyblue"><label>Select Game</label></td>
+        <td bgcolor = "skyblue">
+             <input type="checkbox">Hockey<br>
+             <input type="checkbox">Football<br>
+             <input type="checkbox">Badminton<br>
+             <input type="checkbox">Cricket<br>
+             <input type="checkbox">Volleyball<br>          
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor = "skyblue">Gender</td>
+        <td bgcolor = "skyblue"><input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label></td>
+    </tr>
+    <tr>
+        <td bgcolor = "skyblue"><label for="age"></label>Select your age</label></td>
+        <td bgcolor = "skyblue">  
+            <select name="age" id="age">
+            <option value="youth">Below 30</option>
+            <option value="midage">30 to 40</option>
+            <option value="bonde">41 to 50</option>
+            <option value="free">51 to 60</option>
+            </select>
+        </td>
+    <tr>
+        <td colspan = "2" bgcolor = "skyblue"><input type="file"></td>
+    </tr>
+    <tr bgcolor = "skyblue">
+        <td><input type = "button" value="Click me" onclick="msg()"></td>
+        <td><input type = "button" value="Reset" onclick="msg()">
+        <input type = "button" value="Submit" onclick="msg()"></td>
+    </tr>      
+   
+    </form>
+
+
+    </table>
+</body>
+</html>

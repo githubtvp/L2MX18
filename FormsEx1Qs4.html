@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="FormsEx1Qsn4CSS.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="formcontainer">
+        <form method="post">
+            <h1>Reservation Request</h1>
+            <fieldset class="labelfloatleft">
+                <legend>General Information</legend>
+                <label for="arrivaldate">Arrival date :</label>
+                <input type="text" name="arrdate" id="arrdate" value="12/39/2016" size="20" />Arrival date is
+                invalid<br>
+                <label for="nights">Nights :</label>
+                <input type="text" name="nights" id="nights" value="three" size="20" />Nights must be a number<br>
+                <label for="adults">Adults :</label>
+                <select name="adults" id="adults">
+                    <option value="1">1</option>
+                </select><br>
+                <label for="children">Children :</label>
+                <select name="child" id="child">
+                    <option value="0">0</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+                <label for="roomtype">Room type :</label>
+                <input type="radio" id="std" name="room_type" value="std" checked = "true">
+                <label for="standard">Standard</label>
+                <input type="radio" id="busi" name="room_type" value="business">
+                <label for="business">Business</label>
+                <input type="radio" id="suite" name="room_type" value="suite">
+                <label for="suite">Suite</label><br>
+
+                <label for="bedtype">Bed type :</label>
+                <input type="radio" id="king" name="bed_type" value="king" checked = "true>
+                <label for="king">King</label>
+                <input type="radio" id="double" name="bed_type" value="double">
+                <label for="double">Double Double</label>
+                <input type="radio" id="smoking" name="bed_type" value="smoke">
+                <label for="smoking">Smoking</label>   
+            </fieldset>
+
+            <fieldset class="labelfloatleft">
+                <legend>Contact Information</legend>
+                <label for="name">Name :</label>
+                <input type="text" name="name" id="name" size="20" />Name is required<br>
+                <label for="email">Email :</label>
+                <input type="text" name="email" id="email" value="grace@yahoo.com" size="20" />Email address is invalid<br>
+                <label for="phone">Phone :</label>
+                <input type="text" name="phone" id="phone" value="123-456-789" size="20" />Phone number is invalid<br>
+            </fieldset>
+            <br>
+            <button type="button" value="submit" onclick="msg()">Submit Reservation</button>
+            <button type="button" value="clear" onclick="msg()">Clear</button>
+
+
+
+
+        </form>
+        <!--End <form method="post">-->
+    </div>
+    <!--End <div id = "formcontainer">-->
+</body>
+
+</html>
