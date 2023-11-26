@@ -1,0 +1,273 @@
+<html>
+ <body>
+ <h1>Hello World!!</h1>
+ <button onclick="changeThisPageFunc();">Click Me!</button>
+ <script type="text/javascript">
+ changeThisPageFunc = function() {
+ document.body.style.backgroundColor = "lightblue";
+ document.body.innerHTML = "<h1>I am a little blue today</h1>";
+ }
+ </script>
+ </body>
+</html>
+ii. 
+<html>
+ <head>
+ <style>
+ .myclass {
+ background-color: lightblue;
+ }
+ </style>
+ </head>
+ <body>
+ <h1>Hello World!!</h1>
+ <button onclick="changeThisPageFunc();">Click Me!</button>
+ <script type="text/javascript">
+ changeThisPageFunc = function() {
+ alert("body has class = "+document.body.className);
+ document.body.className = "myclass";
+ alert("body has class = "+document.body.className);
+ document.body.innerHTML = "<h1>I am a little blue today</h1>";
+ }
+ </script>
+ </body>
+</html>
+iii. 
+<html>
+ <body>
+ <h1>Hello World!!</h1>
+ <button onclick="changeThisPageFunc();">Click Me!</button>
+ <script type="text/javascript">
+ changeThisPageFunc = function() {
+ // this will not work
+ document.body.h1.style.backgroundColor = "lightblue";
+ }
+ </script>
+ </body>
+</html>
+iv. 
+<html>
+ <body>
+ <h1>Hello World!!</h1>
+ <button onclick="changeThisPageFunc();">Click Me!</button>
+ <main>
+ <h1>Hello Main</h2>
+ <p>The quick brown fox jumped over the lazy dog.</p>
+ </main>
+ <script type="text/javascript">
+ changeThisPageFunc = function() {
+ var myMain;
+ document.body.style.backgroundColor = "lightblue";
+ myMain = document.querySelector('main');
+ myMain.innerHTML = "<h3>Where have all the flowers gone?<h3>";
+ myMain.style.height = "50px";
+ myMain.style.width = "50%";
+ myMain.style.backgroundColor = "lightgreen";
+ }
+ </script>
+ </body>
+</html>
+Events:
+(Events used in above code snippets:
+Onclick, onchange, onkeyup, onkeypress, onmouseup, onmousedown, onmousemove, 
+window.onload, window.setInterval, window.clearInterval)
+i. 
+<html>
+ <head>
+ <title>Colors</title>
+ </head>
+ <body>
+ <label for="redi">Red:</label>
+ <input type="text" id="redi" min="0" value="255" /> <br>
+ <label for="greeni">Green:</label>
+ <input type="text" id="greeni" value="255" /><br>
+ <label for="bluei">Blue:</label>
+ <input type="text" id="bluei" value="255" />
+ <br>
+ <button onclick="changeColor();">Change Color</button>
+ <script>
+ changeColor = function() {
+ red = document.querySelector('#redi').value;
+ green = document.querySelector('#greeni').value;
+ blue = document.querySelector('#bluei').value;
+ colorStr = "rgb("+red+","+green+","+blue+")";
+ document.body.style.backgroundColor = colorStr;
+ }
+ </script>
+ </body>
+ii. 
+<html>
+ <head>
+ <title>Colors</title>
+ </head>
+ <body>
+ <label for="redi">Red:</label>
+ <input type="text" id="redi" onchange="changeColor()" value="255" /> <br>
+ <label for="greeni">Green:</label>
+ <input type="text" id="greeni" onchange="changeColor()" value="255" /><br>
+ <label for="bluei">Blue:</label>
+ <input type="text" id="bluei" onchange="changeColor()" value="255" />
+ <br>
+ <button onclick="changeColor();">Change Color</button>
+ <script>
+ changeColor = function() {
+ red = document.querySelector('#redi').value;
+ green = document.querySelector('#greeni').value;
+ blue = document.querySelector('#bluei').value;
+ colorStr = "rgb("+red+","+green+","+blue+")";
+ document.body.style.backgroundColor = colorStr;
+ }
+ </script>
+ </body>
+ </html>
+iii. 
+<html>
+ <head>
+ <title>Colors</title>
+ </head>
+ <body>
+ <label for="redi">Red:</label>
+ <input type="range" min=0 max=255 id="redi" onchange="changeColor()" value="255" /> <br>
+ <label for="greeni">Green:</label>
+ <input type="range" min=0 max=255 id="greeni" onchange="changeColor()" value="255" /><br>
+ <label for="bluei">Blue:</label>
+ <input type="range" min=0 max=255 id="bluei" onchange="changeColor()" value="255" />
+ <br>
+ <script>
+ changeColor = function() {
+ red = document.querySelector('#redi').value;
+ green = document.querySelector('#greeni').value;
+ blue = document.querySelector('#bluei').value;
+ colorStr = "rgb(" + red + "," + green + "," + blue + ")";
+ document.body.style.backgroundColor = colorStr;
+ }
+ </script>
+ </body>
+ </html>
+iv. 
+<html>
+ <head>
+ <title>Colors</title>
+ </head>
+ <body>
+ <label for="redi">Red:</label>
+ <input type="range" min=0 max=255 id="redi" onmousemove="changeColor()"
+ onmouseup="showValues()" value="125" /> <span id="redv"></span><br>
+ <label for="greeni">Green:</label>
+ <input type="range" min=0 max=255 id="greeni" onmousemove="changeColor()"
+ onmouseup="showValues()" value="125" /><span id="greenv"></span><br>
+ <label for="bluei">Blue:</label>
+ <input type="range" min=0 max=255 id="bluei" onmousemove="changeColor()"
+ onmouseup="showValues()" value="200" /><span id="bluev"></span>
+ <br>
+ <script>
+ changeColor = function() {
+ red = document.querySelector('#redi').value;
+ green = document.querySelector('#greeni').value;
+ blue = document.querySelector('#bluei').value;
+ colorStr = "rgb(" + red + "," + green + "," + blue + ")";
+ document.body.style.backgroundColor = colorStr;
+ }
+ showValues = function() {
+ document.querySelector('#redv').innerHTML = document.querySelector("#redi").value;
+ document.querySelector('#greenv').innerHTML = document.querySelector("#greeni").value;
+ document.querySelector('#bluev').innerHTML = document.querySelector("#bluei").value;
+ }
+ window.onload = function() { changeColor(); showValues(); }
+ </script>
+ </body>
+ </html>
+v. 
+<html>
+<body>
+<button onclick="stop();">Stop</button>
+<script>
+ changeColor = function() {
+ red = Math.floor(Math.random()*255);
+ green = Math.floor(Math.random()*255);
+ blue = Math.floor(Math.random()*255);
+ colorStr = "rgb(" + red + "," + green + "," + blue + ")";
+ document.body.style.backgroundColor = colorStr;
+ //window.setInterval(changeColor, 1000);
+ }
+ stop = function() {
+ window.clearInterval(intId);
+ }
+ intId = window.setInterval(changeColor, 1000);
+</script>
+</body>
+</html>
+Create Element:
+i. 
+<html>
+ <body>
+ <button onclick="savetime()">Time</button>
+ <table id="timetable">
+ </table>
+ <script type="text/javascript">
+ savetime = function() {
+ t = document.querySelector("#timetable")
+ trow = document.createElement("tr")
+ td = document.createElement("td")
+ contents = document.createTextNode(Date())
+ td.appendChild(contents)
+ trow.appendChild(td)
+ t.appendChild(trow)
+ }
+ </script>
+ </body>
+</html>
+ii. 
+<html>
+<table id="mytable"></table>
+<script>
+tbl = document.querySelector("#mytable")
+for(i = 0; i < 10; i++) {
+ row = document.createElement("tr")
+ cell = document.createElement("td")
+ cell.innerText = i
+ row.appendChild(cell)
+ tbl.appendChild(row)
+}
+</script>
+</html>
+2. Make a simple web page that contains an <h2> with the word “Hello” a text input box, and a 
+button. When the user types a word or phrase into the input box and presses the button, 
+replace the old h2 with the word entered. Using animation, make the word spin.
+3. Make a simple web page that contains a button and a paragraph with the id of count 
+Whenever this button is pressed increment the count by 1 and update the paragraph text. 
+Also update the font size so that as the number gets larger, so does the font.
+4. Repeat the previous exercise but make a list of numbers. In this case you will not be able to 
+simply update the innerHTML of the paragraph, you will need to use the 
+document.createElement() and document.appendChild() functions to add a new list item.
+5. Given the following html. Every time the button is pressed you should add a row to the 
+table, where the new row of the table contains the sum of the previous two rows. You 
+should make use of the lastChild, previousSibling, and innerText attributes in this exercise.
+<html>
+ <body>
+ <button onclick="addrow()">Next</button>
+ <ul id="mytable"><li id=0>1</li><li id=1>1</li></ul>
+ </body>
+</html>
+6. Create an html page with two text input boxes and four buttons. The buttons should be 
+labeled +, -, *, and /. When one of these buttons is pressed you should get the value from 
+both text input boxes and add, subtract, multiply, or divide the numbers entered in the text 
+input boxes. The result should be displayed below the buttons. Note In order to do math on 
+the values you read from the text input boxes you will need to use Number.parseInt on the 
+value. for example suppose you get a reference to input box 1 using myIn1 = 
+document.querySelector("#in1id"); then the statement value1 = 
+Number.parseInt(myIn1.value) converts the string from the text input box to an integer.
+7. Starting with the code given, create a page that looks like the following image: The rest of 
+the page must be created using javascript. You must use document.createElement and the 
+appendChild functions.
+<html>
+<body>
+<button onclick="makePage();">Click Here</button>
+</body>
+</html>
+8. Write a function that each time it is clicked will do the following:
+i. Turn the background of the page light blue.
+ii. Add another H1 to the page that says “So Long 130”
+iii. Changes the font color for the H1 to red
+By each time, I mean that if the button is clicked 10 times there should be 10 H1’s on the 
+page

@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Qsn5.html</title>
+</head>
+
+<body>
+    <button id="b1" onclick="Addrow();">Next</button>
+    <ul id="mytable" style="list-style: none;">
+        <li id="0">1</li>
+        <li id="1">1</li>
+    </ul>
+
+    <script type="text/javascript">
+        Addrow = function () {  
+            var theLsChd = document.getElementById("mytable").lastElementChild;  
+            var theLsChdId = theLsChd.id;
+            var theLsChdCont = theLsChd.textContent;          
+            var theLsChdPrSib = document.getElementById("mytable").lastElementChild.previousElementSibling;
+            var theLsChdPrSibId = theLsChdPrSib.id;
+            var theLsChdPrSibCont = theLsChdPrSib.textContent;
+            let nextVal = parseInt(theLsChdCont) + parseInt(theLsChdPrSibCont);
+            let nextId = parseInt(theLsChdId) + 1;         
+            var theUl1 = document.querySelector('#mytable');
+            theUl1.appendChild(createAListItem(nextId, nextVal));
+        }
+        function createAListItem(aId, aCnt) {
+            let li = document.createElement('li');
+            li.id = aId;           
+            li.textContent = aCnt;
+            return li;
+        }
+    </script>
+
+</body>
+
+</html>

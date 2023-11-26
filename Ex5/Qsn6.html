@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>Qsn6.html</title>
+</head>
+
+<body>
+    <p>Enter values in the boxes :</p>
+
+    <input type="text" id="opr1" onchange="onTextChange();" />&nbsp;&nbsp;
+    <input type="text" id="opr2" onchange="onTextChange();" /><br><br><br>
+
+    <button id="b1" onclick="add();" disabled>Add + </button>
+    <button id="b2" onclick="sub();" disabled>Subtract -</button>
+    <button id="b3" onclick="mul();" disabled>Multiply *</button>
+    <button id="b4" onclick="div();" disabled>Divide /</button><br><br><br>
+    <p>Result of operations</p>
+    <input type="text" id="result" onchange="onTextChange();" readonly />
+
+    <script type="text/javascript">
+
+        onTextChange = function () {
+            txt1 = document.querySelector('#opr1').value;
+            txt2 = document.querySelector('#opr2').value;
+            if (txt1 != "" && txt2 != "") {
+                document.querySelector('#b1').disabled = false;
+                document.querySelector('#b2').disabled = false;
+                document.querySelector('#b3').disabled = false;
+                document.querySelector('#b4').disabled = false;
+            }
+        }
+
+        var oprn = 0;
+        add = function () {
+            oprn = 1;
+            processOpn(oprn);
+        }
+        sub = function () {
+            oprn = 2;
+            processOpn(oprn);
+        }
+        mul = function () {
+            oprn = 3;
+            processOpn(oprn);
+        }
+        div = function () {
+            oprn = 4;
+            processOpn(oprn);
+        }
+
+        function processOpn(a) {
+            var result;
+            switch (a) {
+                case 1:
+                    result = parseInt(txt1) + parseInt(txt2);
+                    break;
+                case 2:
+                    result = parseInt(txt1) - parseInt(txt2);
+                    break;
+                case 3:
+                    result = parseInt(txt1) * parseInt(txt2);
+                    break;
+                case 4:
+                    result = parseInt(txt1) / parseInt(txt2);
+                    break;
+                default:
+                    break;
+            }
+            document.querySelector('#result').value = result;
+        }
+
+    </script>
+</body>
+
+</html>

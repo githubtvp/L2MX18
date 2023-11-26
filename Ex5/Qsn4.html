@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Qsn4.html</title>
+</head>
+
+<body>
+    <button id="b1" onclick="AppendNewElement();">Increase Counter</button>
+    <ul id="ul1">
+        <li id= "0" style="font-size: 20;" hidden>0</li>  
+    </ul>
+
+    <script type="text/javascript">
+        AppendNewElement = function () {
+            var ctr = document.getElementById("ul1").lastElementChild;
+            var aId = ctr.id;  
+            var theCount = ctr.textContent;
+            theCount++;
+            var fSz = window.getComputedStyle(ctr, null).getPropertyValue('font-size');
+            var fontSz = parseFloat(fSz);
+            fontSz += 1;
+            var fSzPx = fontSz + "px";        
+            var theUl1 = document.querySelector('#ul1');
+            theUl1.appendChild(createAListItem(aId, fSzPx, theCount));
+        }
+        function createAListItem(aId, fSz, aCnt) {
+         
+            let li = document.createElement('li');  
+            li.id = aId;            
+            li.style = "list-style: none; font-size: " + fSz;
+            li.textContent = aCnt;        
+            return li;
+        }
+
+    </script>
+</body>
+
+</html>

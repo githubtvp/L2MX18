@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Qsn8.html</title>
+</head>
+
+<body>
+    <button onclick="changeAppearanceAndContent();">Click Me!</button>
+    <ul id="hdrLst" style="color: red; list-style-type: none"><h1></h1></ul>
+    <script type="text/javascript">
+            changeAppearanceAndContent = function () {
+            document.body.style.backgroundColor = "lightblue";
+            var theUl1 = document.querySelector('#hdrLst');
+            var txt = "So Long 130"
+            theUl1.appendChild(createAListItem(txt));
+        }
+
+        function createAListItem(aTxt) {
+            let li = document.createElement('li');
+            li.style = "color: red;";
+            li.textContent = aTxt;
+            return li;
+        }
+    </script>
+</body>
+
+</html>

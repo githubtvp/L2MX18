@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Qsn2.html</title>
+</head>
+
+<body>
+    <h2 id = "hdr1" style="color:blue;">Hello</h2>
+    <input type="text" id="txtBox1" onchange="onTextChange();"/><br>
+   
+    <button id ="b1" onclick="changeTheHeader();" disabled >Change heading</button>
+    <script type="text/javascript">
+        onTextChange = function()
+        {
+            document.querySelector('#b1').disabled = false;
+        }
+        changeTheHeader = function () {
+            theText = document.querySelector('#txtBox1').value;       
+            var hdr1 = document.getElementById('hdr1');
+            hdr1.textContent = theText;    
+          //  hdr1.setAttribute("transform", rotate(-90));   
+        }
+    </script>
+</body>
+
+</html>

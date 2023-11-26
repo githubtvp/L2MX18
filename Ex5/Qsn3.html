@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Qsn3.html</title>
+</head>
+
+<body>
+    <button id="b1" onclick="IncreaseCounter();">Increase Counter</button>
+    <main>
+        <p id="counter" style="list-style: none; font-size: 20;" hidden>0</p><br>
+    </main>
+    <script type="text/javascript">
+        IncreaseCounter = function () {
+            var ctr = document.getElementById('counter');
+            var theNo = ctr.textContent;    
+            theNo++;
+            ctr.textContent = theNo;
+            var fSz = window.getComputedStyle(ctr, null).getPropertyValue('font-size');
+            var fontSz = parseFloat(fSz);
+            fontSz += 2;
+            var fSzPx = fontSz + "px";
+            var theMain = document.querySelector('main');
+            theMain.innerHTML = "<p id='counter' style= 'list-style: none; font-size: " + fSzPx + ";'>" + theNo + "</p><br>";
+        }
+    </script>
+</body>
+
+</html>

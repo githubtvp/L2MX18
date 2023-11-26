@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Qsn7.html</title>
+</head>
+
+<body>
+    <button id="b1" onclick="makePage();">Click here</button>
+    <div id="hdrCont"></div>
+    <div id="pCont"></div>
+    <div id="lstCont"></div>
+    <ol id="mytable" type="I"></ol>
+    <script type="text/javascript">
+        makePage = function () {
+            document.getElementById("hdrCont").innerHTML = "<h1>I am an H1</h1> ";
+            document.getElementById("pCont").innerHTML = "<p>This is a paragraph followed by a list</p> ";
+            var theOl1 = document.querySelector('#mytable');
+            var fst = "This is First";
+            theOl1.appendChild(createAListItem(fst));
+            var sec = "This is Second";
+            theOl1.appendChild(createAListItem(sec));
+        }
+        function createAListItem(aTxt) {
+            let li = document.createElement('li');
+            li.textContent = aTxt;
+            return li;
+        }
+    </script>
+</body>
+
+</html>
