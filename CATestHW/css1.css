@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(167, 192, 237);
+}
+
+.header {
+    border: 1px solid rgb(24, 23, 23);
+    padding: 15px;
+}
+
+.shiftDownRow
+{
+    margin-top: 50px;
+}
+
+.div1 {
+    width: 55%;
+    float: left;
+    padding: 15px;
+    border: 1px solid rgb(14, 174, 142);
+}
+
+.div2 {
+    width: 45%;
+    float: left;
+    padding: 15px;
+    border: 1px solid rgb(70, 32, 141);
+}
+
+form {
+    margin-top: 1em;
+    /* border : solid 1px; */
+    padding: 1em;
+    font-size: 16px;
+    margin-right: 15px;
+
+}
+
+#formcontainer {
+    /* width : 75%; */
+}
+
+.labelfloatleft label {
+
+    width: 100px;
+    margin-right: 15px;
+    color: black;
+    float: left;
+    text-align: left;
+}
+
+.labelfloatleft input {
+    display: inline-flexbox;
+}
+
+.txtalign {
+    padding: 1em;
+}

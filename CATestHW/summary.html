@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Summary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css1.css" />
+</head>
+
+<body onload="getPrevEntries()">
+    <div id="formcontainer">
+        <form method="post">
+            <div class="header">
+                <h1>Bill Summary</h1>
+            </div>
+            <div class="div1">
+                <fieldset class="labelfloatleft">
+                    <table>
+                        <tr>
+                            <td>
+                                <legend>Personal Information</legend>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <input type="text" id="fname" aria-label="First name" size="25" disabled></td>
+                            <td colspan="2">
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </p>
+                            </td>
+                            <td><input type="text" id="lname" aria-label="Last name" size="25" disabled></td>
+                        </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><input type="email" id="email" aria-label="Email address" size="65" disabled>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><input type="text" id="coyname" aria-label="Company name" size="65"
+                                    disabled></td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset class="labelfloatleft">
+                    <table>
+                        <tr>
+                            <td>
+                                <legend>Billing & Delivery Address</legend>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><input type="text" id="street" aria-label="street" size="65" disabled></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="city" aria-label="city" size="25" disabled></td>
+                            <td colspan="1">
+                                <p>&nbsp; &nbsp;</p>
+                            </td>
+                            <td><input type="text" id="country" aria-label="country" size="25" disabled></td>
+                        </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="zip" aria-label="zip" width="25" disabled></td>
+                            <td colspan="1">
+                                <p>&nbsp; &nbsp; </p>
+                            </td>
+                            <td><input type="text" id="zipcode" aria-label="zip" width="25" disabled></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+            <div class="div2">
+                <fieldset class="labelfloatleft">
+                    <table>
+                        <tr>
+                            <td>
+                                <legend>Order Details</legend>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><label id="productCat"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label for="qty">Quantity :</label></td>
+                            <td><input type="text" id="qty" size="1" disabled></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><label id="productName"></label></td>
+                            <td><label for="productCost">Product Price </label></td>
+                            <td><label id="productCost"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label id="itemAmt" for="productAmt">Product Amount</label></td>
+                            <td><label id="productAmt"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label id="setupfee" for="fee">Set up fee :</label></td>
+                            <td><label id="fee"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label id="total" for="totalAmt">Total :</label></td>
+                            <td> <label id="totalAmt"></label></td>
+                        </tr>
+                    </table>
+                    <a class="btn btn-primary" href="billing.html" role="button" onclick="reset()">Back</a>
+                    <a class="btn btn-primary" href="index.html" role="button">Cancel</a>
+                    <a class="btn btn-primary" href="summary.html" role="button" onclick="confirmOrder()">Confirm Order</a>
+                </fieldset>
+            </div>
+        </form>
+        <!--End <form method="post">-->
+    </div> <!--End <div id = "formcontainer">-->
+    <script src="js1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
