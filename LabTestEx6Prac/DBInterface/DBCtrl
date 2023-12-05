@@ -4,6 +4,15 @@ function showIndexDotHtml(req,res) {
     res.sendFile(path.join(__dirname , ".." , "views", "index.html"));
 }
 
+function insertRec(req,res) {
+    //res.sendFile(path.join(__dirname , ".." , "views", "index.html"));
+}
+
+function showRec(req,res) {
+  //  res.sendFile(path.join(__dirname , ".." , "views", "index.html"));
+}
+
+
 module.exports = {
     showIndexDotHtml
 };
