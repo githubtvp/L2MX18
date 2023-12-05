@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 // Connect to MongoDB
 const url = 'mongodb://localhost:27017';
-const dbName = 'your_database_name';
+const dbName = 'Ex6';
 
 MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
     if (err) {
