@@ -3,39 +3,41 @@ const path = require('path');
 //const loginRecord = require("../models/schemas");
 const { Payments, User } = require("../models/schemas");
 
+// Controller method for handling login
+// async function login(req, res){
+//     try {
+//       // Extract credentials from the request body
+//       const { userid, passwd } = req.body;
 
-const User = require('../models/User');
+//       // Retrieve user from the database based on the provided username
+//       const user = await User.findOne({ userid });
+
+//       // Check if the user exists and the password is correct
+//       if (user && user.passwd === passwd) {
+//         // Successful login
+//         res.send('Login successful');
+//       } else {
+//         // Invalid credentials
+//         res.send('Invalid username or password');
+//       }
+//     } catch (error) {
+//       console.error('Error during login:', error);
+//       res.status(500).send('Internal Server Error');
+//     }
+//   };
 
 
-  // Controller method for handling login
-async function login(req, res){
-    try {
-      // Extract credentials from the request body
-      const { username, password } = req.body;
-
-      // Retrieve user from the database based on the provided username
-      const user = await User.findOne({ username });
-
-      // Check if the user exists and the password is correct
-      if (user && user.password === password) {
-        // Successful login
-        res.send('Login successful');
-      } else {
-        // Invalid credentials
-        res.send('Invalid username or password');
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-      res.status(500).send('Internal Server Error');
-    }
-  };
+//  function showLoginPage(req,res) {
+//   console.log("Here login");
+//     res.sendFile(path.join(__dirname , ".." , "views", "login.html"));
+// }
 
 function showPaymentPage(req,res) {
     res.sendFile(path.join(__dirname , ".." , "views", "index.html"));
 }
 
 async function  insertRec(req,res) {
-  //console.log('Here in Insert'); 
+  console.log('Here in Insert'); 
   try{
       if(!req.body)
       { throw new Error('Missing request body')};
@@ -97,10 +99,11 @@ function deleteRec(req,res) {
   }
   
 module.exports = {
-    showPaymentPage,
-    insertRec,
-    showRec,
-    deleteRec,
-    login
+    showPaymentPage
+   // insertRec,
+   // showRec,
+  //  deleteRec
+    //login,
+   // showLoginPage
 };
 
