@@ -7,8 +7,8 @@ const router = express.Router();
 //     res.send('hello world');
 // })
 router.get('/', DBCtrl.showIndexDotHtml);
-//router.post('/', DBCtrl.insertRec);
-//router.get('/', DBCtrl.showRec);
-
+// router.post('/add', DBCtrl.insertRec);
+// router.get('/', DBCtrl.showRec);
+// router.get('/', DBCtrl.deleteRec);
 
 module.exports = router;

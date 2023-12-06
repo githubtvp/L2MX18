@@ -5,14 +5,17 @@ function showIndexDotHtml(req,res) {
 }
 
 function insertRec(req,res) {
-    //res.sendFile(path.join(__dirname , ".." , "views", "index.html"));
 }
 
 function showRec(req,res) {
-  //  res.sendFile(path.join(__dirname , ".." , "views", "index.html"));
 }
 
-
+function deleteRec(req,res) {
+  }
+  
 module.exports = {
-    showIndexDotHtml
+    showIndexDotHtml,
+    insertRec,
+    showRec,
+    deleteRec
 };
