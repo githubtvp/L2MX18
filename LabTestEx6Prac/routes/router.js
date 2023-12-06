@@ -1,14 +1,17 @@
 const express = require('express');
+const router = express.Router();
 const DBCtrl = require('../DBInterface/DBCtrl');
 
-
-const router = express.Router();
 // router.get('/', (req,res)=>{
 //     res.send('hello world');
 // })
-router.get('/', DBCtrl.showIndexDotHtml);
-// router.post('/add', DBCtrl.insertRec);
-// router.get('/', DBCtrl.showRec);
+
+router.post('/', DBCtrl.insertRec);
+router.get('/index', DBCtrl.showPaymentPage);
+router.get('/showrecords', DBCtrl.showRec);
 // router.get('/', DBCtrl.deleteRec);
+// Route for handling login
+router.post('/login', DBCtrl.login);
+
 
 module.exports = router;

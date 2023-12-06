@@ -1,21 +1,106 @@
 const path = require('path');
+//const paymentRecord = require("../models/schemas");
+//const loginRecord = require("../models/schemas");
+const { Payments, User } = require("../models/schemas");
 
-function showIndexDotHtml(req,res) {
+
+const User = require('../models/User');
+
+
+  // Controller method for handling login
+async function login(req, res){
+    try {
+      // Extract credentials from the request body
+      const { username, password } = req.body;
+
+      // Retrieve user from the database based on the provided username
+      const user = await User.findOne({ username });
+
+      // Check if the user exists and the password is correct
+      if (user && user.password === password) {
+        // Successful login
+        res.send('Login successful');
+      } else {
+        // Invalid credentials
+        res.send('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  };
+
+function showPaymentPage(req,res) {
     res.sendFile(path.join(__dirname , ".." , "views", "index.html"));
 }
 
-function insertRec(req,res) {
+async function  insertRec(req,res) {
+  //console.log('Here in Insert'); 
+  try{
+      if(!req.body)
+      { throw new Error('Missing request body')};
+      let records = req.body;
+      console.log('Records', records);
+      let response = await Payments.create(records);
+      res.send(response);
+      // //Extract data from the request body
+      // const { recordName, description, category, date } = req.body;
+
+      // // Create a new record document
+      // const newRecord = new Record({
+      //   name: recordName,
+      //   description: description,
+      //   category: category,
+      //   date: date,
+      //   // Add other fields as needed
+      // });
+
+      // // Save the new record to the database
+      // await newRecord.save();
+
+    //  const { paymentmethod, cardname, cardno, expirydate } = req.body;
+
+      // // Create a new record document
+      // const newRecord = new Record({
+      //   paymentMethod: paymentmethod,
+      //   cardName: cardname,
+      //   cardNumber: cardno,
+      //   expiryDate: expirydate,
+      //   // Add other fields as needed
+     
+     // });
+
+      // Save the new record to the database
+     // await newRecord.save();
+
+  }
+  catch(err)
+  {
+    res.status(500).send("Insert Records : error : " + err.message);
+  }
 }
 
-function showRec(req,res) {
+async function showRec(req,res) {
+ // console.log('Here in show'); 
+  try{
+    const records = await Payments.find();
+    res.send(records);
+   // res.render('show-records', {records});
+  }
+  catch(err)
+  {
+    res.status(500).send("Show Records : error : " + err.message);
+  } 
 }
 
 function deleteRec(req,res) {
   }
   
 module.exports = {
-    showIndexDotHtml,
+    showPaymentPage,
     insertRec,
     showRec,
-    deleteRec
+    deleteRec,
+    login
 };
+

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongourl = "mongodb://127.0.0.1/payments";
+const mongourl = "mongodb://127.0.0.1/my_database";
 const connectDb = async function connectDB() {
     try {
         await mongoose.connect(mongourl); 
