@@ -28,6 +28,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 const friendsRoute = require('./routes/friendsRoute');
 app.use('/friends' , friendsRoute);
+//app.use('/' , friendsRoute);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
